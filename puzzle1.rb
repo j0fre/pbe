@@ -1,13 +1,8 @@
 
 require 'mfrc522'
-
-
-
-
 class Rfid
 
-	def read_uid
-		
+	def read_uid	
 		puts "Passi la targeta/clauer sisplau"
 		r = MFRC522.new
 		id="no llegit encara"
@@ -27,18 +22,15 @@ class Rfid
 			s = s + id[i].to_bytehex #el vector de 4 números en decimal que s'ha llegit de la targeta, es passa a hexadecimal cada valor per separat
 			#i s'afegeix al string que es retornarà
 		end
-		return "UID: #{s}"
-	
+		return "UID: #{s}"	
 	end
 end
 
 
-if __FILE__==$0
-	
+if __FILE__==$0	
 	rf=Rfid.new()
 	uid=rf.read_uid
-	puts uid
-	
+	puts uid	
 end
 
 
