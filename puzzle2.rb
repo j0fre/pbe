@@ -28,14 +28,12 @@ class Finestra < Gtk::Window
 		@button= Gtk::Button.new(:label => 'Clear')
 		@button.set_sensitive(false)
 		@button.style_context.add_provider(css_inicial, Gtk::StyleProvider::PRIORITY_USER)
-		
 		@button.signal_connect "clicked" do |_widget|
 			@label.style_context.add_provider(css_inicial, Gtk::StyleProvider::PRIORITY_USER)
 			@label.set_text("Please, login with your university card")
 			@button.set_sensitive(false)
 			fil
 		end	
-		
 		container.pack_start(@button,:expand => false, :fill=>true)		
 		
 		def canviPantalla			
@@ -50,22 +48,19 @@ class Finestra < Gtk::Window
 		
 		def llegir	
 			@uid=""
-			@uid=@rf.read_uid()
-			
+			@uid=@rf.read_uid()			
 			GLib::Idle.add{
 				canviPantalla
 				while @uid==""
 					canviPantalla
 				end
-			}
-				
+			}				
 		end
 		
 		def fil
 			filn=Thread.new { 	
 				llegir										
-			}
-			
+			}			
 		end
 		fil
 		
