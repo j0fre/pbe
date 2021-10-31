@@ -65,14 +65,11 @@ class Finestra < Gtk::Window
 		fil
 		
 		signal_connect("delete-event") {|_widget|  Gtk.main_quit }
-		show_all
-		
+		show_all		
 	end
 end
 
-
 if __FILE__==$0
-	
 	fin = Finestra.new()	
 	Gtk.main
 end
