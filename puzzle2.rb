@@ -50,9 +50,6 @@ class Finestra < Gtk::Window
 			@uid=@rf.read_uid()			
 			GLib::Idle.add{
 				canviPantalla
-				while @uid==""
-					canviPantalla
-				end
 			}				
 		end
 		
