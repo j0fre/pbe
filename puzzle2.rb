@@ -44,7 +44,6 @@ class Finestra < Gtk::Window
 					@button.set_sensitive(true)
 				end			
 		end
-		canviPantalla
 		
 		def llegir	
 			@uid=""
