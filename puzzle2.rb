@@ -58,9 +58,7 @@ class Finestra < Gtk::Window
 		end
 		
 		def fil
-			filn=Thread.new { 	
-				llegir										
-			}			
+			filn=Thread.new {llegir}			
 		end
 		fil
 		
